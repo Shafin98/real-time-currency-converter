@@ -15,4 +15,19 @@ function convert() {
         alert("Please enter a valid amount");
     }
 
+    let url = `https://open.er-api.com/v6/latest/${from}`
+
+    fetch(url)
+    .then(response => response.json())
+    .then ( data => {
+        let rate = data.rates[to];
+        let result = amount * rate;
+
+        document.getElementById("result").innerHTML = 
+        `${amount} ${from} = ${result.toFixed(2)} ${to}`;
+    })
+    .catch ( ()=>{
+        alert("Error")
+    })
+
 }
