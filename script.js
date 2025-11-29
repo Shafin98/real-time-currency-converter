@@ -7,4 +7,12 @@ function convert() {
 
     console.log('Form Data', from);
 
+    let to = document.getElementById("to").value;
+
+    console.log('to Data', to);
+
+    if (amount === "" || amount <= 0){
+        alert("Please enter a valid amount");
+    }
+
 }
